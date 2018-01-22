@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E0B8F876201576AF00743056 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8F875201576AF00743056 /* AppDelegate.m */; };
+		E0B8F879201576AF00743056 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8F878201576AF00743056 /* ViewController.m */; };
+		E0B8F87C201576AF00743056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B8F87A201576AF00743056 /* Main.storyboard */; };
+		E0B8F87E201576AF00743056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B8F87D201576AF00743056 /* Assets.xcassets */; };
+		E0B8F881201576AF00743056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B8F87F201576AF00743056 /* LaunchScreen.storyboard */; };
+		E0B8F884201576AF00743056 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8F883201576AF00743056 /* main.m */; };
+		E0B8F88D201576CC00743056 /* ZBRemoteAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8F88C201576CC00743056 /* ZBRemoteAudioPlayer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E0B8F871201576AF00743056 /* ZBPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZBPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B8F874201576AF00743056 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E0B8F875201576AF00743056 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E0B8F877201576AF00743056 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E0B8F878201576AF00743056 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E0B8F87B201576AF00743056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0B8F87D201576AF00743056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0B8F880201576AF00743056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E0B8F882201576AF00743056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0B8F883201576AF00743056 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E0B8F88B201576CC00743056 /* ZBRemoteAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRemoteAudioPlayer.h; sourceTree = "<group>"; };
+		E0B8F88C201576CC00743056 /* ZBRemoteAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRemoteAudioPlayer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0B8F86E201576AF00743056 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E0B8F868201576AF00743056 = {
+			isa = PBXGroup;
+			children = (
+				E0B8F873201576AF00743056 /* ZBPlayer */,
+				E0B8F872201576AF00743056 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E0B8F872201576AF00743056 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0B8F871201576AF00743056 /* ZBPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0B8F873201576AF00743056 /* ZBPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E0B8F88A201576CC00743056 /* Classes */,
+				E0B8F874201576AF00743056 /* AppDelegate.h */,
+				E0B8F875201576AF00743056 /* AppDelegate.m */,
+				E0B8F877201576AF00743056 /* ViewController.h */,
+				E0B8F878201576AF00743056 /* ViewController.m */,
+				E0B8F87A201576AF00743056 /* Main.storyboard */,
+				E0B8F87D201576AF00743056 /* Assets.xcassets */,
+				E0B8F87F201576AF00743056 /* LaunchScreen.storyboard */,
+				E0B8F882201576AF00743056 /* Info.plist */,
+				E0B8F883201576AF00743056 /* main.m */,
+			);
+			path = ZBPlayer;
+			sourceTree = "<group>";
+		};
+		E0B8F88A201576CC00743056 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E0B8F88B201576CC00743056 /* ZBRemoteAudioPlayer.h */,
+				E0B8F88C201576CC00743056 /* ZBRemoteAudioPlayer.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0B8F870201576AF00743056 /* ZBPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0B8F887201576AF00743056 /* Build configuration list for PBXNativeTarget "ZBPlayer" */;
+			buildPhases = (
+				E0B8F86D201576AF00743056 /* Sources */,
+				E0B8F86E201576AF00743056 /* Frameworks */,
+				E0B8F86F201576AF00743056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZBPlayer;
+			productName = ZBPlayer;
+			productReference = E0B8F871201576AF00743056 /* ZBPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0B8F869201576AF00743056 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = zhangzhengbin;
+				TargetAttributes = {
+					E0B8F870201576AF00743056 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E0B8F86C201576AF00743056 /* Build configuration list for PBXProject "ZBPlayer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0B8F868201576AF00743056;
+			productRefGroup = E0B8F872201576AF00743056 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0B8F870201576AF00743056 /* ZBPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0B8F86F201576AF00743056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0B8F881201576AF00743056 /* LaunchScreen.storyboard in Resources */,
+				E0B8F87E201576AF00743056 /* Assets.xcassets in Resources */,
+				E0B8F87C201576AF00743056 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0B8F86D201576AF00743056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0B8F879201576AF00743056 /* ViewController.m in Sources */,
+				E0B8F884201576AF00743056 /* main.m in Sources */,
+				E0B8F876201576AF00743056 /* AppDelegate.m in Sources */,
+				E0B8F88D201576CC00743056 /* ZBRemoteAudioPlayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E0B8F87A201576AF00743056 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0B8F87B201576AF00743056 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E0B8F87F201576AF00743056 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0B8F880201576AF00743056 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0B8F885201576AF00743056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E0B8F886201576AF00743056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0B8F888201576AF00743056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RXK44XAJ47;
+				INFOPLIST_FILE = ZBPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzb.ZBPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E0B8F889201576AF00743056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RXK44XAJ47;
+				INFOPLIST_FILE = ZBPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzb.ZBPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0B8F86C201576AF00743056 /* Build configuration list for PBXProject "ZBPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0B8F885201576AF00743056 /* Debug */,
+				E0B8F886201576AF00743056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0B8F887201576AF00743056 /* Build configuration list for PBXNativeTarget "ZBPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0B8F888201576AF00743056 /* Debug */,
+				E0B8F889201576AF00743056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0B8F869201576AF00743056 /* Project object */;
+}
