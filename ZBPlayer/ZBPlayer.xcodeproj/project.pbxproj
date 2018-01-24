@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00CD1DF20172DC200FEC4FA /* ZBReourceLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E00CD1DE20172DC200FEC4FA /* ZBReourceLoaderManager.m */; };
 		E0B8F876201576AF00743056 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8F875201576AF00743056 /* AppDelegate.m */; };
 		E0B8F879201576AF00743056 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B8F878201576AF00743056 /* ViewController.m */; };
 		E0B8F87C201576AF00743056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B8F87A201576AF00743056 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E00CD1DD20172DC200FEC4FA /* ZBReourceLoaderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBReourceLoaderManager.h; sourceTree = "<group>"; };
+		E00CD1DE20172DC200FEC4FA /* ZBReourceLoaderManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBReourceLoaderManager.m; sourceTree = "<group>"; };
 		E0B8F871201576AF00743056 /* ZBPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZBPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B8F874201576AF00743056 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0B8F875201576AF00743056 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 			children = (
 				E0B8F88B201576CC00743056 /* ZBRemoteAudioPlayer.h */,
 				E0B8F88C201576CC00743056 /* ZBRemoteAudioPlayer.m */,
+				E00CD1DD20172DC200FEC4FA /* ZBReourceLoaderManager.h */,
+				E00CD1DE20172DC200FEC4FA /* ZBReourceLoaderManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E00CD1DF20172DC200FEC4FA /* ZBReourceLoaderManager.m in Sources */,
 				E0B8F879201576AF00743056 /* ViewController.m in Sources */,
 				E0B8F884201576AF00743056 /* main.m in Sources */,
 				E0B8F876201576AF00743056 /* AppDelegate.m in Sources */,

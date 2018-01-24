@@ -8,13 +8,15 @@
 
 #import "ZBRemoteAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import "ZBReourceLoaderManager.h"
 @interface ZBRemoteAudioPlayer (){
     // 记录是否是用户手动暂停
     BOOL _isUserPause;
 }
+
 @property (nonatomic,strong) AVPlayer *player;
 
+@property (nonatomic,strong) ZBReourceLoaderManager *reourceLoaderManager;
 
 @end
 
@@ -46,6 +48,7 @@ static ZBRemoteAudioPlayer * _shareInstance;
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:kPlayerURLOrStateChangeNotification object:nil userInfo:@{@"state": @(self.state), @"url": self.url}];
 }
+
 - (void)setUrl:(NSURL *)url {
     _url = url;
     
@@ -112,61 +115,49 @@ static ZBRemoteAudioPlayer * _shareInstance;
 
 - (void)playAudioWithURL: (NSURL *)url {
     
-    _url = url;
-    // 1. 资源的请求
-    AVURLAsset *asset = [AVURLAsset assetWithURL:url];
+    if ([self.url isEqual:url]) {
+        if (self.state == ZBRemoteAudioPlayerPause) {
+            [self resume];
+            return;
+        }else if (self.state == ZBRemoteAudioPlayerStateLoading || self.state == ZBRemoteAudioPlayerPlaying)
+        {
+            return;
+        }
+    }
     
-    // 2. 资源的组织
+    self.url = url;;
+
+    // 1. 负责根据URL地址, 请求播放资源
+    // 修改URL地址, 为streaming的协议, 这样可以将连续的多媒体数据分段处理
+
+    NSURLComponents *components = [NSURLComponents componentsWithString:url.absoluteString];
+    [components setScheme:@"streaming"];
+    NSURL *streamURL = [components URL];
+
+    AVURLAsset *asset = [AVURLAsset assetWithURL:streamURL];
+    self.reourceLoaderManager = [[ZBReourceLoaderManager alloc] init];
+    [asset.resourceLoader setDelegate:self.reourceLoaderManager queue:dispatch_get_main_queue()];
+
+       
+    // 2. 负责资源管理, 准备播放资源
     AVPlayerItem *item = [AVPlayerItem playerItemWithAsset:asset];
-    // 当资源的组织者, 告诉我们资源准备好了之后, 我们再播放
-    // AVPlayerItemStatus status
+
+    //  注意: 如果要开始播放资源, 最好, 直接监听资源管理者的状态, 如果准备好了, 再播放
+    [self clearObserver];
     [item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-    
-    // 3. 资源的播放
+
+    [item addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
+
+    [item addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
+
+    // 监听通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayInterrupt) name:AVPlayerItemPlaybackStalledNotification object:nil];
+
+    // 3. 负责播放准备好的资源, 播放器
     self.player = [AVPlayer playerWithPlayerItem:item];
-//    if ([self.url isEqual:url]) {
-//        if (self.state == ZBRemoteAudioPlayerPause) {
-//            [self resume];
-//            return;
-//        }else if (self.state == ZBRemoteAudioPlayerStateLoading || self.state == ZBRemoteAudioPlayerPlaying)
-//        {
-//            return;
-//        }
-//    }
-    
-//    self.url = url;;
-//
-//    // 1. 负责根据URL地址, 请求播放资源
-//    // 修改URL地址, 为streaming的协议, 这样可以将连续的多媒体数据分段处理
-//
-//    NSURLComponents *components = [NSURLComponents componentsWithString:url.absoluteString];
-//    [components setScheme:@"streaming"];
-//    NSURL *streamURL = [components URL];
-//
-//    AVURLAsset *asset = [AVURLAsset assetWithURL:streamURL];
-////    self.resourceLoaderM = [[XMGReourceLoaderManager alloc] init];
-////    [asset.resourceLoader setDelegate:self.resourceLoaderM queue:dispatch_get_main_queue()];
-//
-//
-//    // 2. 负责资源管理, 准备播放资源
-//    AVPlayerItem *item = [AVPlayerItem playerItemWithAsset:asset];
-//
-//    //  注意: 如果要开始播放资源, 最好, 直接监听资源管理者的状态, 如果准备好了, 再播放
-//    [self clearObserver];
-//    [item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-//
-//    [item addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
-//
-//    [item addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
-//
-//    // 监听通知
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-//
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayInterrupt) name:AVPlayerItemPlaybackStalledNotification object:nil];
-//
-//    // 3. 负责播放准备好的资源, 播放器
-//    self.player = [AVPlayer playerWithPlayerItem:item];
-//
+
 }
 
 
@@ -274,7 +265,6 @@ static ZBRemoteAudioPlayer * _shareInstance;
     [self.player.currentItem removeObserver:self forKeyPath:@"status"];
     [self.player.currentItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
     [self.player.currentItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -300,7 +290,6 @@ static ZBRemoteAudioPlayer * _shareInstance;
         BOOL isCanPlay = self.player.currentItem.playbackLikelyToKeepUp;
         if (isCanPlay) {
             NSLog(@"数据加载的可以播放了");
-            
             // 注意, 这时候, 不要手动的开始播放
             // 因为, 有可能用户已经手动的暂停了播放
             if (!_isUserPause) {
